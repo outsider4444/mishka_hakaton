@@ -1,0 +1,153 @@
+.gameBG{
+    background: url("https://umka.aisgorod.ru/Content/NewDesign/img/bg-wh-rec.svg");
+}
+.white_block {
+    display: flex;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 950px;
+    margin: auto;
+}
+.mental_block_content {
+    display: flex;
+    text-align: center;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    min-width: 840px;
+    min-height: 540px;
+    padding: 50px;
+}
+.meg_radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.dark_label {
+    color: #003348;
+    font-family: MU;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.block_bg_wh {
+     object-fit: fill;
+     position: absolute;
+     width: -webkit-fill-available;
+     height: -webkit-fill-available;
+ }
+.radio_block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    margin-bottom: 7px;
+}
+.inp_label {
+    color: #F6BB3C;
+    font-family: MU;
+    text-align: center;
+    font-size: 20px;
+}
+.meg_radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label связанного с .meg-radio */
+.meg_radio + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.meg_radio + label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 5px solid #EDE7E3;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.meg_radio:not(:disabled):not(:checked) + label:hover::before {
+    border-color: #3A9C74;
+    opacity: 0.5;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.meg_radio:not(:disabled):active + label::before {
+    border-color: #EDE7E3;
+    background-color: #3A9C74;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.meg_radio:focus + label::before {
+    border-color: #3A9C74;
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.meg_radio:focus:not(:checked) + label::before {
+    border-color: #EDE7E3;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.meg_radio:checked + label::before {
+    border-color: #EDE7E3;
+    background-color: #3A9C74;
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.meg_radio:disabled + label::before {
+    background-color: #EDE7E3;
+}
+
+.meg_radio:disabled + label {
+    color: #bcbcbc;
+}
+.but_block {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.orange_but_bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 15px 15px #ED5E3D40);
+}
+.button_text {
+    font-size: 18px;
+    font-family: MU;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+}
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+}
+.orange_button:focus .orange_but_bg {
+    filter: drop-shadow(0 15px 15px #ED5E3D60);
+}
+
+.orange_button:active .orange_but_bg {
+    filter: none;
+}

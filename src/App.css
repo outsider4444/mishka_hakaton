@@ -2,3 +2,19 @@
     font-family: MU;
     font-size: 25pt;
 }
+.bg-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    background-position: bottom left -160px, top right -70px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 330px, 280px;
+}
+.content-box {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(700px + (940 - 700) * ((100vw - 768px) / (1024 - 768)));
+}

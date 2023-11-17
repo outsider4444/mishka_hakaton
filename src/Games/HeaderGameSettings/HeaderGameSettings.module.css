@@ -1,0 +1,27 @@
+
+
+.status_bar {
+    position: relative;
+    display: flex;
+    max-width: 960px;
+    align-items: center;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-bottom: 30px;
+}
+.but_back {
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-family: MU;
+    color: #ffffff;
+    cursor: pointer;
+}
+.heading_block {
+    font-family: MU;
+    color: white;
+    font-size: 36px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
