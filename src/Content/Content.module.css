@@ -1,0 +1,55 @@
+.content_box {
+    width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.heading_block {
+    font-family: MU;
+    color: white;
+    font-size: 36px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.trainer_block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    width: 70%;
+}
+.trainer_cards {
+    display: flex;
+    flex-direction: row;
+    background-size: cover !important;
+    width: 400px;
+    height: 145px;
+    align-items: center;
+    text-decoration: none;
+    margin: 10px;
+}
+.trainer_text {
+    font-family: MU;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+#mental{
+    background: url(../../public/img/card-bg-green.svg);
+}
+#flcard{
+    background: url(../../public/img/card-bg-lblue.svg);
+}
+#shulte{
+    background: url(../../public/img/card-bg-yellow.svg);
+}
+#abacus{
+    background: url(../../public/img/card-bg-red.svg);
+}
+#stacks{
+    background: url(../../public/img/card-bg-blue.svg);
+}
+#jumping{
+    background: url(../../public/img/card-bg-pink.svg);
+}
