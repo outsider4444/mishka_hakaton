@@ -28,14 +28,14 @@ const Header = (props) => {
                         </nav>
                     </div>
                 </div>
-                <div class={classes.menu_logo}>
-                    <a class={classes.header_logo} aria-label="МегаУмка" href="/">
+                <div className={classes.menu_logo}>
+                    <a className={classes.header_logo} aria-label="МегаУмка" href="/">
                         <img src="https://umka.aisgorod.ru/Content/NewDesign/img/logo.svg" alt="Логотип МегаУмка"/>
                     </a>
                 </div>
-                <div class={classes.user_label}>
+                <div className={classes.user_label}>
                     <img src="https://umka.aisgorod.ru/Content/NewDesign/img/user-face.svg" alt="Пользователь"/>
-                    <span class={classes.user_name}>IDK </span>
+                    <span className={classes.user_name}>IDK </span>
                 </div>
             </div>
         </div>

@@ -16,5 +16,5 @@
 .content-box {
     margin-right: auto;
     margin-left: auto;
-    width: calc(700px + (940 - 700) * ((100vw - 768px) / (1024 - 768)));
+    /*width: calc(700px + (940 - 700) * ((100vw - 768px) / (1024 - 768)));*/
 }

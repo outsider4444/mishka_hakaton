@@ -1,7 +1,19 @@
+.bg_bear {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: url("https://umka.aisgorod.ru/Content/NewDesign/img/bg-bear.svg");
+    width: 100%;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100vh;
+    background-position-x: 61vw;
+    background-position-y: center;
+    background-size: 790px;
+}
 .content_box {
-    width: 1320px;
     margin-right: auto;
     margin-left: auto;
+    width: 1320px;
     text-align: center;
 }
 .heading_block {
@@ -9,7 +21,6 @@
     color: white;
     font-size: 36px;
     margin-left: 30px;
-    margin-top: 50px;
     margin-bottom: 20px;
 }
 .trainer_block {
