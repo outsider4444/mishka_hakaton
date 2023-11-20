@@ -197,12 +197,12 @@ a{
     z-index: 1;
 }
 .modalActive {
+    border-radius: 40px;
     position: absolute;
     width: 750px;
     height: 495px;
     top: calc(50% - 250px);
     left: calc(50% - 405px);
-    border-radius: 10px;
     background-color: rgb(255, 255, 255);
     cursor: default;
     padding: 40px 20px;
@@ -216,5 +216,6 @@ a{
     cursor: pointer;
 }
 .modalWindow {
+    text-align: center;
     position: relative;
 }

@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import classes from "./Header.module.css";
+import {Link, useLocation} from "react-router-dom";
 
 const Header = (props) => {
     let nav_item_active_style = `${classes.nav_item} ${classes.active}`;
     let nav_to_show = document.getElementById("nav_to_show");
     let togle = document.getElementById(classes["toggle"]);
     const [toggler, setToggler] = useState(false);
-
+    const location = useLocation();
     function showDiv() {
         setToggler(!toggler);
     }
@@ -23,7 +24,8 @@ const Header = (props) => {
                 <div className={classes.nav} id={"nav_to_show"}>
                     <div className={classes.nav_wrapper}>
                         <nav>
-                            <a href="/" className={nav_item_active_style}>Тренажёры</a><br/>
+                            <Link to="/" className={location.pathname === "/" ? nav_item_active_style : classes.nav_item}>Тренажёры</Link><br/>
+                            <Link to="/Lectures/" className={location.pathname === "/Lectures/" ? nav_item_active_style : classes.nav_item}>Лекции</Link><br/>
                             <a href="/Home/LogOut" className={classes.nav_item}>Выйти</a><br/>
                         </nav>
                     </div>

@@ -6,23 +6,19 @@ import Content from "./Content/Content";
 import WordsGame from "./Games/WordsGame/WordsGame";
 import {useState} from "react";
 import Home from "./Games/Home";
+import LectureWrapper from "./Lectures/LectureWrapper";
 
 function App() {
     return (
         <div className="App">
             <div className={"bg-wrapper"}>
                 <BrowserRouter>
-                    <section>
-                        <Header/>
-                        <div className={"content-box"}>
-                            <Routes>
-                                <Route path={"/"} element={<Content/>}/>
-                                <Route path={"/Home/*"} element={<Home/>}/>
-                            </Routes>
-                        </div>
-                        {/*<Content/>*/}
-                        <footer></footer>
-                    </section>
+                    <Routes>
+                        <Route path={"/"} element={<Content/>}/>
+                        <Route path={"/Lectures/*"} element={<LectureWrapper/>}/>
+                        <Route path={"/Home/*"} element={<Home/>}/>
+                    </Routes>
+                    <footer></footer>
                 </BrowserRouter>
             </div>
         </div>

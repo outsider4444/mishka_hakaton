@@ -18,10 +18,9 @@ const WordsGame = (props) => {
 
     function btnCheckAnswer() {
         let input_answer = document.getElementById("input_answer");
-        if (currentWord.length > 0){
+        if (currentWord.length >= 2){
             if (input_answer.value.toUpperCase() === currentWord[0].answer.toUpperCase()) {
                 setScore(score + 1);
-                console.log("Верно")
                 setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()))
                 input_answer.value = "";
                 setUnCorrectMessage("")
@@ -31,11 +30,18 @@ const WordsGame = (props) => {
                 setUnCorrectMessage("НЕПРАВИЛЬНО!")
             }
         }
-        else{
-            const modalBackground = document.getElementById("modalBackground");
-            modalBackground.style.display = "block";
+        else if (currentWord.length >= 0){
+            if (input_answer.value.toUpperCase() === currentWord[0].answer.toUpperCase()) {
+                setScore(score + 1);
+                setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()))
+                input_answer.value = "";
+                const modalBackground = document.getElementById("modalBackground");
+                modalBackground.style.display = "block";
+            }
+            else{
+                setUnCorrectMessage("НЕПРАВИЛЬНО!")
+            }
         }
-
     }
 
     return (
@@ -63,8 +69,18 @@ const WordsGame = (props) => {
             <div className={classes.modalBackground} id={"modalBackground"}>
                 <div className={classes.modalActive}>
                     <div className={classes.modalWindow}>
-
-                        <Link to={"/"}>Закончить</Link>
+                        <div>
+                            Ваш результат: {score} верных ответов
+                        </div>
+                        <div style={{marginTop: 150}}>
+                            <NavLink to={"/"} id="EndGame" className={classes.orange_button}
+                                     style={{"outline": "none", "boxShadow": "none"}}>
+                                <img className={classes.orange_but_bg}
+                                     src="https://umka.aisgorod.ru/Content/NewDesign/img/red-button-bg.svg"
+                                     alt="red-but"/>
+                                <span className={classes.button_text} style={{"fontSize": "18pt", "padding":"10px"}}>Закончить</span>
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

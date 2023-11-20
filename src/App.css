@@ -9,6 +9,7 @@
     min-height: 100%;
     height: auto;
     width: 100%;
+    background: url("https://umka.aisgorod.ru/Content/NewDesign/img/backg_left.svg"), url("https://umka.aisgorod.ru/Content/NewDesign/img/backg_right.svg");
     background-position: bottom left -160px, top right -70px;
     background-repeat: no-repeat, no-repeat;
     background-size: 330px, 280px;
@@ -17,4 +18,16 @@
     margin-right: auto;
     margin-left: auto;
     /*width: calc(700px + (940 - 700) * ((100vw - 768px) / (1024 - 768)));*/
+}
+.bg_bear {
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: url("https://umka.aisgorod.ru/Content/NewDesign/img/bg-bear.svg");
+    width: 100%;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100vh;
+    background-position-x: 61vw;
+    background-position-y: 14vh;
+    background-size: 790px;
 }

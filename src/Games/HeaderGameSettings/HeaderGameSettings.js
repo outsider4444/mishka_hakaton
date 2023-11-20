@@ -16,7 +16,7 @@ const HeaderGameSettings = (props) => {
                 </div>
                 <div id="TimerAndCounterBlock" style={{display:props.display}}>
                     <div className={classes.status_bar} id="timerstatus">
-                        <div className={classes.timer_block}>
+                        <div className={classes.timer_block} style={{display: "none"}}>
                             <span className={classes.small_wh_text}>время</span>
                             <span id="TimerHeaderBlock" className={classes.big_wh_text}>00:00</span>
                         </div>
