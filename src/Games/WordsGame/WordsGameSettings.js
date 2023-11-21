@@ -36,11 +36,11 @@ const WordsGameSettings = (props) => {
                                    type="radio" id="set-2" name="nosoundset"
                                    value="Сигналы"/>
                             <label className={classes.dark_label} htmlFor="set-2">Русский</label>
-                            <input className={classes.meg_radio} onClick={() => onChangeLanguage("Both")} type="radio"
-                                   id="set-3" name="nosoundset"
-                                   value="Сигналы"/>
-                            <label className={classes.dark_label} id={"set-3_label"} htmlFor="set-3">По
-                                переменно</label>
+                            {/*<input className={classes.meg_radio} onClick={() => onChangeLanguage("Both")} type="radio"*/}
+                            {/*       id="set-3" name="nosoundset"*/}
+                            {/*       value="Сигналы"/>*/}
+                            {/*<label className={classes.dark_label} id={"set-3_label"} htmlFor="set-3">По*/}
+                            {/*    переменно</label>*/}
                         </div>
 
                         <div className={classes.but_block}>

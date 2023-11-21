@@ -15,7 +15,7 @@ const MyComponent = () => {
                     </div>
                     <Link to={"1"} className={classes.trainer_cards}
                           id={classes["mental"]}>
-                        <img src="https://pluspng.com/img-png/abacus-png-hd-abacus-clip-art-illustration-6951.png"
+                        <img src="../../../slides/abacus-png-hd-abacus-clip-art-illustration-6951.png"
                              style={{width: 80, height: 80, marginLeft: 10}}/>
                         <span className={classes.trainer_text}>Что такое "Абакус"?</span>
                     </Link>

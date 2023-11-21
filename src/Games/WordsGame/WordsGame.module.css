@@ -150,7 +150,6 @@ a{
 .orange_button:focus .orange_but_bg {
     filter: drop-shadow(0 15px 15px #ED5E3D60);
 }
-
 .orange_button:active .orange_but_bg {
     filter: none;
 }

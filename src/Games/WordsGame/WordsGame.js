@@ -11,8 +11,14 @@ const WordsGame = (props) => {
         {question: "Chair", answer: "Стул"},
         {question: "House", answer: "Дом"}
     ]
-    let RussianWords = [];
-    const [currentWord, setCurrentWord] = useState(EnglishWords);
+    let RussianWords = [{question: "Собака", answer: "Dog"},
+        {question: "Машина", answer: "Car"},
+        {question: "Город", answer: "City"},
+        {question: "Стул", answer: "Chair"},
+        {question: "Дом", answer: "House"}];
+
+    const [currentWord, setCurrentWord] = useState(props.languageType === "English" ? EnglishWords : RussianWords );
+
     const [score, setScore] = useState(0);
     const [unCorrectMessage, setUnCorrectMessage] = useState("");
 
@@ -62,7 +68,6 @@ const WordsGame = (props) => {
                                  alt="red-but"/>
                             <span className={classes.button_text}>Проверить</span>
                         </button>
-                        <span className={classes.uncorrect_message}>{unCorrectMessage}</span>
                     </div>
                 </div>
             </div>

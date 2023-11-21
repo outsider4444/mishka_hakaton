@@ -109,7 +109,7 @@ const SlideTest1 = (props) => {
                             </NavLink>
                         </div>
                         <div style={{float: "right"}}>
-                            <NavLink to={"/Lectures/1/5"} className={classes.orange_button_right} onClick={checkAnswer}
+                            <NavLink to={"/Lectures/1/"} className={classes.orange_button_right} onClick={checkAnswer}
                                      style={{"outline": "none", "boxShadow": "none"}}>
                                 <img className={classes.orange_but_bg}
                                      src="https://umka.aisgorod.ru/Content/NewDesign/img/red-button-bg.svg"

@@ -3,6 +3,8 @@ import WordsGameSettings from "./WordsGame/WordsGameSettings";
 import {Route, Routes} from "react-router-dom";
 import WordsGame from "./WordsGame/WordsGame";
 import Header from "../Header/Header";
+import MemoryGame from "./MemoryGame/MemoryGame";
+import MemoryGameSettings from "./MemoryGame/MemoryGameSettings";
 
 const Home = (props) => {
     const [correctWord, setCorrectWord] = useState();
@@ -13,8 +15,12 @@ const Home = (props) => {
                 <Header/>
                 <Routes>
                     <Route path={"WordsSetting/"} element={<WordsGameSettings languageType={languageType}
-                                                                              setLanguageType={setLanguageType}/>}></Route>
-                    <Route path={"Words"} element={<WordsGame/>}></Route>
+                                                                              setLanguageType={setLanguageType}/>}/>
+                    <Route path={"Words"} element={<WordsGame languageType={languageType}/>}/>
+
+
+                    <Route path={"CardsSetting/"} element={<MemoryGameSettings/>}/>
+                    <Route path={"Cards"} element={<MemoryGame/>}/>
                 </Routes>
             </div>
         </section>

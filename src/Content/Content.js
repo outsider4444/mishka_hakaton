@@ -41,13 +41,13 @@ const Content = (props) => {
                     <div className={classes.trainer_block}>
                         <Link to={"/Home/WordsSetting"} className={classes.trainer_cards}
                               id={classes["mental"]}>
-                            <img src="/Content/NewDesign/img/mental.svg"/>
-                            <span className={classes.trainer_text}>Слова</span>
+                            <img src="../../../img/Translation-Icon-PNG-File.png" style={{width: 80, height: 80, marginLeft: 10}}/>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Слова</span>
                         </Link>
-                        {/*<a className={classes.trainer_cards} href="/Home/Flashcards" id={classes["flcard"]}>*/}
-                        {/*    <img src="/Content/NewDesign/img/flcard.svg"/>*/}
-                        {/*    <span className={classes.trainer_text}>Исторические карточки</span>*/}
-                        {/*</a>*/}
+                        <a className={classes.trainer_cards} href="/Home/CardsSetting" id={classes["flcard"]}>
+                            <img src="https://cdn4.iconfinder.com/data/icons/gambling-line-icons-vol-1/48/25-1024.png" style={{width: 80, height: 80, marginLeft: 10}}/>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Меморио</span>
+                        </a>
                         {/*<a className={classes.trainer_cards} href="/Home/ShulteTables" id={classes["shulte"]}>*/}
                         {/*    <img src="/Content/NewDesign/img/shulte.svg"/>*/}
                         {/*    <span className={classes.trainer_text}>Таблицы Шульте</span>*/}
