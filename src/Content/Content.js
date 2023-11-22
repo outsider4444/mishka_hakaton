@@ -41,17 +41,17 @@ const Content = (props) => {
                     <div className={classes.trainer_block}>
                         <Link to={"/Home/WordsSetting"} className={classes.trainer_cards}
                               id={classes["mental"]}>
-                            <img src="../../../img/Translation-Icon-PNG-File.png" style={{width: 80, height: 80, marginLeft: 10}}/>
+                            <img src="../../../img/Translation-Icon-PNG-File.png" className={classes.image_icon}/>
                             <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Слова</span>
                         </Link>
-                        <a className={classes.trainer_cards} href="/Home/CardsSetting" id={classes["flcard"]}>
-                            <img src="https://cdn4.iconfinder.com/data/icons/gambling-line-icons-vol-1/48/25-1024.png" style={{width: 80, height: 80, marginLeft: 10}}/>
+                        <Link className={classes.trainer_cards} to="/Home/CardsSetting" id={classes["flcard"]}>
+                            <img src="https://cdn4.iconfinder.com/data/icons/gambling-line-icons-vol-1/48/25-1024.png" className={classes.image_icon}/>
                             <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Меморио</span>
-                        </a>
-                        {/*<a className={classes.trainer_cards} href="/Home/ShulteTables" id={classes["shulte"]}>*/}
-                        {/*    <img src="/Content/NewDesign/img/shulte.svg"/>*/}
-                        {/*    <span className={classes.trainer_text}>Таблицы Шульте</span>*/}
-                        {/*</a>*/}
+                        </Link>
+                        <Link className={classes.trainer_cards} to="/Home/Sentence" id={classes["shulte"]}>
+                            <img src="https://cdn-icons-png.flaticon.com/512/831/831182.png" className={classes.image_icon}/>
+                            <span style={{marginLeft: "15px"}}  className={classes.trainer_text}>Предложения - пазлы</span>
+                        </Link>
                         {/*<a className={classes.trainer_cards} href="/Home/Abacus" id={classes["abacus"]}>*/}
                         {/*    <img src="/Content/NewDesign/img/abacus.svg"/>*/}
                         {/*    <span className={classes.trainer_text}>Абакус</span>*/}

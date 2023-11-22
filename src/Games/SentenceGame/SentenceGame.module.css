@@ -1,0 +1,94 @@
+.white_block {
+    display: flex;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 950px;
+    margin: auto;
+}
+.mental_block_content {
+    display: flex;
+    text-align: center;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    min-width: 840px;
+    min-height: 540px;
+    padding: 50px;
+}
+.meg_radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.dark_label {
+    color: #003348;
+    font-family: MU;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.block_bg_wh {
+    object-fit: fill;
+    position: absolute;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.question_label{
+    font-size: 32pt;
+}
+.on_drop_sentence{
+    margin-top: 20px;
+    background-color: #d0cdcd;
+    border-radius: 35px;
+    min-height: 80px;
+    min-width: 750px;
+    padding-top: 30px;
+}
+.word_card{
+    text-align: center;
+    float: left;
+    background-color: #f1f0f0;
+    border-radius: 20px;
+    padding: 8px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.word_card_on_sentence{
+    float: left;
+    border-radius: 25px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+}
+.button_text {
+    font-family: MU;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+}
+.orange_but_bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 15px 15px #ED5E3D40);
+}
+.orange_button:focus .orange_but_bg {
+    filter: drop-shadow(0 15px 15px #ED5E3D60);
+}
+.orange_button:active .orange_but_bg {
+    filter: none;
+}

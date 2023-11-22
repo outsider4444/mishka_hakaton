@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import classes from "./WordsGame.module.css"
 import HeaderGameSettings from "../HeaderGameSettings/HeaderGameSettings";
 import {Link, NavLink} from "react-router-dom";
+import ModalWindow from "../../Templates/ModalWindow";
 
 const WordsGame = (props) => {
     let EnglishWords = [
@@ -71,25 +72,7 @@ const WordsGame = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={classes.modalBackground} id={"modalBackground"}>
-                <div className={classes.modalActive}>
-                    <div className={classes.modalWindow}>
-                        <div>
-                            Ваш результат: {score} верных ответов
-                        </div>
-                        <div style={{marginTop: 150}}>
-                            <NavLink to={"/"} id="EndGame" className={classes.orange_button}
-                                     style={{"outline": "none", "boxShadow": "none"}}>
-                                <img className={classes.orange_but_bg}
-                                     src="https://umka.aisgorod.ru/Content/NewDesign/img/red-button-bg.svg"
-                                     alt="red-but"/>
-                                <span className={classes.button_text} style={{"fontSize": "18pt", "padding":"10px"}}>Закончить</span>
-                            </NavLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <ModalWindow score={score}/>
         </div>
     );
 };

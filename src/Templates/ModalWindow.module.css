@@ -1,0 +1,71 @@
+/*Модальное окно*/
+.modalBackground {
+    left: 0;
+    right: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* указываем z-индекс для корректного наслаивания */
+    z-index: 1;
+}
+.modalActive {
+    border-radius: 40px;
+    position: absolute;
+    width: 750px;
+    height: 495px;
+    top: calc(50% - 250px);
+    left: calc(50% - 405px);
+    background-color: rgb(255, 255, 255);
+    cursor: default;
+    padding: 40px 20px;
+}
+.modalClose {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.modalWindow {
+    text-align: center;
+    position: relative;
+}
+
+/*Кнопка*/
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    margin-top: 1030px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+}
+.button_text {
+    font-family: MU;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+}
+.orange_but_bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 15px 15px #ED5E3D40);
+}
+.orange_button:focus .orange_but_bg {
+    filter: drop-shadow(0 15px 15px #ED5E3D60);
+}
+.orange_button:active .orange_but_bg {
+    filter: none;
+}

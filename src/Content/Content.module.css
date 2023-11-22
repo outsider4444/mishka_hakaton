@@ -34,6 +34,11 @@
     text-decoration: none;
     margin-top: 15px;
 }
+.image_icon{
+    width: 80px;
+    height: 80px;
+    margin-left: 10px
+}
 #mental{
     background: url(../../public/img/card-bg-green.svg);
 }
