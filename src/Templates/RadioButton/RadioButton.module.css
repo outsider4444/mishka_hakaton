@@ -1,0 +1,63 @@
+.dark_label {
+    color: #003348;
+    font-family: MU;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.meg_radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+/* для элемента label связанного с .meg-radio */
+.meg_radio + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+/* создание в label псевдоэлемента  before со следующими стилями */
+.meg_radio + label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 5px solid #EDE7E3;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+/* стили при наведении курсора на радио */
+.meg_radio:not(:disabled):not(:checked) + label:hover::before {
+    border-color: #3A9C74;
+    opacity: 0.5;
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.meg_radio:not(:disabled):active + label::before {
+    border-color: #EDE7E3;
+    background-color: #3A9C74;
+}
+/* стили для радиокнопки, находящейся в фокусе */
+.meg_radio:focus + label::before {
+    border-color: #3A9C74;
+}
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.meg_radio:focus:not(:checked) + label::before {
+    border-color: #EDE7E3;
+}
+/* стили для радиокнопки, находящейся в состоянии checked */
+.meg_radio:checked + label::before {
+    border-color: #EDE7E3;
+    background-color: #3A9C74;
+}
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.meg_radio:disabled + label::before {
+    background-color: #EDE7E3;
+}
+.meg_radio:disabled + label {
+    color: #bcbcbc;
+}

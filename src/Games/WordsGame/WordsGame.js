@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import classes from "./WordsGame.module.css"
 import HeaderGameSettings from "../HeaderGameSettings/HeaderGameSettings";
 import {Link, NavLink} from "react-router-dom";
-import ModalWindow from "../../Templates/ModalWindow";
+import ModalWindow from "../../Templates/ModalWindow/ModalWindow";
 
 const WordsGame = (props) => {
     let EnglishWords = [
@@ -55,7 +55,7 @@ const WordsGame = (props) => {
         <div>
             <HeaderGameSettings text={"Слова"} score={score} display={"flex"}/>
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
-                 style={{"outline": "none", "boxShadow": "none"}}>
+                 style={{"outline": "none", "boxShadow": "none", marginTop: -50}}>
                 <div className={classes.white_block}>
                     <img className={classes.block_bg_wh}
                          src="https://umka.aisgorod.ru/Content/NewDesign/img/bg-wh-rec.svg"/>

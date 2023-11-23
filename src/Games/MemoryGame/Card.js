@@ -14,14 +14,29 @@ const Card = (props) => {
     }
     let card_class = `${classes.card} ${itemClass}`
 
-    return (
-        <div className={card_class} onClick={() => props.handleClick(props.id)}>
-            {props.item["text"] === null ?
+    if (props.mode === "Only Text"){
+        return (
+            <div className={card_class} onClick={() => props.handleClick(props.id)}>
+                <span style={{textAlign: "center"}}>{props.item["text"]}</span>
+            </div>
+        );
+    } else if (props.mode === "Cards n Text"){
+        return (
+            <div className={card_class} onClick={() => props.handleClick(props.id)}>
+                {props.item["text"] === null ?
+                    <img src={props.item["img"]} alt=""/>
+                    : <span style={{textAlign: "center"}}>{props.item["text"]}</span>
+                }
+            </div>
+        );
+    }
+    else if(props.mode === "Only Cards"){
+        return (
+            <div className={card_class} onClick={() => props.handleClick(props.id)}>
                 <img src={props.item["img"]} alt=""/>
-                : <span style={{textAlign: "center"}}>{props.item["text"]}</span>
-            }
-        </div>
-    );
+            </div>
+        )
+    }
 };
 
 export default Card;

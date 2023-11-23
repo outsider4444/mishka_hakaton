@@ -50,12 +50,12 @@ const Content = (props) => {
                         </Link>
                         <Link className={classes.trainer_cards} to="/Home/Sentence" id={classes["shulte"]}>
                             <img src="https://cdn-icons-png.flaticon.com/512/831/831182.png" className={classes.image_icon}/>
-                            <span style={{marginLeft: "15px"}}  className={classes.trainer_text}>Предложения - пазлы</span>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Предложения - пазлы</span>
                         </Link>
-                        {/*<a className={classes.trainer_cards} href="/Home/Abacus" id={classes["abacus"]}>*/}
-                        {/*    <img src="/Content/NewDesign/img/abacus.svg"/>*/}
-                        {/*    <span className={classes.trainer_text}>Абакус</span>*/}
-                        {/*</a>*/}
+                        <Link className={classes.trainer_cards} to="/Home/NamePicture" id={classes["abacus"]}>
+                            <img src="https://www.clipartmax.com/png/full/295-2958147_strides-exercise-icon.png" className={classes.image_icon}/>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Опиши действие</span>
+                        </Link>
                         {/*<a className={classes.trainer_cards} href="/Home/JumpingNumbers" id={classes["jumping"]}>*/}
                         {/*    <img src="/Content/NewDesign/img/jumping.svg"/>*/}
                         {/*    <span className={classes.trainer_text}>Прыгающие числа</span>*/}

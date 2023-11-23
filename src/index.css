@@ -20,3 +20,6 @@ body, html {
   background-attachment: fixed; /*edit*/
   -webkit-text-size-adjust: 100%;
 }
+a{
+  text-decoration: none;
+}
