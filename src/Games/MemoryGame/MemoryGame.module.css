@@ -33,6 +33,8 @@
     width: -webkit-fill-available;
     height: -webkit-fill-available;
 }
+
+/*Карточки*/
 .container{
     height: 700px;
     width: 700px;
@@ -50,7 +52,6 @@
     justify-content: center;
     transition: transform 0.5s;
 }
-
 @keyframes hideCard {
     0%{
         transform: rotateY(0);
@@ -111,27 +112,15 @@
     transform: scale(1);
 }
 
+
+/*Настройки*/
 .but_block_settings1 {
     text-align: center;
-}
-.but_block_settings2 {
-    text-align: center;
-    justify-content: center;
-    float: left;
-    margin-top: 100px;
-    margin-left: 80px;
-}
-.orange_button_settings {
-    position: relative;
-    background-color: transparent;
-    font-family: MU;
-    border: none;
-    cursor: pointer;
-    min-width: 150px;
-    min-height: 50px;
-    padding: 5px;
-    margin-top: 100px;
-}
+}.but_block {
+     display: flex;
+     justify-content: space-evenly;
+     width: 80%;
+ }
 .orange_but_bg_settings {
     object-fit: fill;
     position: absolute;
@@ -141,7 +130,34 @@
     top: 0;
     filter: drop-shadow(0 15px 15px #ED5E3D40);
 }
+.orange_button_settings {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 5px;
+    margin-top: 100px;
+}
 
+.but_block_settings2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+/*Кнопки*/
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+}
 .but_block {
     text-align: center;
     justify-content: center;
@@ -161,7 +177,7 @@
     padding: 10px;
 }
 .button_text {
-    font-family: MU;
+    font-size: 18px;
     color: #ffffff;
     position: relative;
     margin: auto;
@@ -182,6 +198,8 @@
     filter: none;
 }
 
+
+/*Радио кнопки*/
 .radio_block {
     display: flex;
     flex-direction: column;

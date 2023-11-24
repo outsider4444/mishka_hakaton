@@ -27,8 +27,30 @@
     text-decoration: none;
     margin: 10px;
 }
+
+.trainer_block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    width: 70%;
+}
 #mental{
     background: url(../../../public/img/card-bg-green.svg);
+}
+#flcard{
+    background: url(../../../public/img/card-bg-lblue.svg);
+}
+#shulte{
+    background: url(../../../public/img/card-bg-yellow.svg);
+}
+#abacus{
+    background: url(../../../public/img/card-bg-red.svg);
+}
+#stacks{
+    background: url(../../../public/img/card-bg-blue.svg);
+}
+#jumping{
+    background: url(../../../public/img/card-bg-pink.svg);
 }
 .trainer_text {
     font-family: MU;

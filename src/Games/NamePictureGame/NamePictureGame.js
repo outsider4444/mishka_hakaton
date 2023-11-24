@@ -12,7 +12,7 @@ const NamePictureGame = (props) => {
     };
 
     const checkAnswer = () => {
-        if (selectedOption === "правильный вариант") {
+        if (selectedOption === props.variants[props.correctVariant].text) {
             setIsCorrect(true);
         } else {
             setIsCorrect(false);
@@ -28,14 +28,13 @@ const NamePictureGame = (props) => {
                     <img className={classes.block_bg_wh}
                          src="https://umka.aisgorod.ru/Content/NewDesign/img/bg-wh-rec.svg"/>
                     <div className={classes.mental_block_content}>
-                        <img src="http://ii.yakuji.moe/vg/thumb/1641833179696s.png" alt="предмет"/>
+                        <img width={250} height={250} src={props.picture} alt="предмет"/>
                         <div>
                             <div className={classes.radio_block}>
-                                <RadioButton Click={handleOptionChange} text={"Вариант 1"} id={"1"} value={"Вариант1"}/>
-                                <RadioButton Click={handleOptionChange} text={"Вариант 2"} id={"2"} value={"Вариант2"}/>
-                                <RadioButton Click={handleOptionChange} text={"Вариант 3"} id={"3"} value={"правильный вариант"}/>
+                                {props.variants.map(variant =>
+                                    <RadioButton Click={handleOptionChange} text={variant.text} id={variant.id} value={variant.text}/>
+                                )}
                             </div>
-
                         </div>
                         <button id="EndGame" onClick={checkAnswer} className={classes.orange_button}
                                 style={{"outline": "none", "boxShadow": "none"}}>

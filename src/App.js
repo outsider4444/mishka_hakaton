@@ -7,6 +7,7 @@ import WordsGame from "./Games/WordsGame/WordsGame";
 import {useState} from "react";
 import Home from "./Games/Home";
 import LectureWrapper from "./Lectures/LectureWrapper";
+import Profile from "./Profile/Profile";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         <Route path={"/"} element={<Content/>}/>
                         <Route path={"/Lectures/*"} element={<LectureWrapper/>}/>
                         <Route path={"/Home/*"} element={<Home/>}/>
+                        <Route path={"/Profile/*"} element={<Profile/>}/>
                     </Routes>
                     <footer></footer>
                 </BrowserRouter>

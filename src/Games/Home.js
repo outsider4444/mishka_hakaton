@@ -7,6 +7,7 @@ import MemoryGame from "./MemoryGame/MemoryGame";
 import MemoryGameSettings from "./MemoryGame/MemoryGameSettings";
 import SentenceGame from "./SentenceGame/SentenceGame";
 import NamePictureGame from "./NamePictureGame/NamePictureGame";
+import Transcription from "./Transcription/Transcription";
 
 const Home = (props) => {
     // Для игры в слова
@@ -138,6 +139,39 @@ const Home = (props) => {
         {id: 3, array: "Белые медведи живут на северном полюсе"}]);
     const words_translation = Math.floor(Math.random() * words.length);
 
+    // Опиши картинку
+    const [namePicturesState, setNamePicturesState] = useState([
+        {
+            id: 1, picture: "../../../img/name_picture/jumping_photo.png",
+            variants: [{id: 1, text: "swimming"}, {id: 2, text: "jumping"}, {id: 3, text: "running"}],
+            correctVariant: 1
+        },
+        {
+            id: 2, picture: "", variants: [{id: 1, text: "Бла1"}, {id: 2, text: "Бла2"}, {id: 3, text: "Бла3"}],
+            correctVariant: 1
+        },
+        {
+            id: 3, picture: "", variants: [{id: 1, text: "Бла1"}, {id: 2, text: "Бла2"}, {id: 3, text: "Бла3"}],
+            correctVariant: 2
+        },
+    ]);
+
+    //Напиши слово по транскрипции
+    const [TranscriptionState, setTranscriptionsState] = useState([
+        {
+            id: 1, transcriptionWord: "[fʌn]", variants: [{id: 1, text: "fine"}, {id: 2, text: "fan"}, {id: 3, text: "fun"}],
+            correctVariant: 2
+        },
+        {
+            id: 2, transcriptionWord: "[muːn]", variants: [{id: 1, text: "mun"}, {id: 2, text: "moon"}, {id: 3, text: "moan"}],
+            correctVariant: 1
+        },
+        {
+            id: 3, transcriptionWord: "[l" + "æ" +"nd]", variants: [{id: 1, text: "land"}, {id: 2, text: "lend"}, {id: 3, text: "lond"}],
+            correctVariant: 0
+        },
+    ]);
+
     return (
         <section>
             <div className={"content-box"}>
@@ -155,7 +189,10 @@ const Home = (props) => {
                                                 modeCardsType={modeCardsType}/>}/>
 
                     {/*todo Дописать варианты для картинок (создать массивы)*/}
-                    <Route path={"NamePicture"} element={<NamePictureGame picture={null} variants={null} correctVariant={null}/>}/>
+                    <Route path={"NamePicture"}
+                           element={<NamePictureGame picture={namePicturesState[0].picture}
+                                                     variants={namePicturesState[0].variants}
+                                                     correctVariant={namePicturesState[0].correctVariant}/>}/>
 
                     <Route path={"Sentence"} element={<SentenceGame
                         words={words[words_translation].array.sort(() => Math.random() - 0.5)}
@@ -169,8 +206,16 @@ const Home = (props) => {
                         setTranslation={setTranslation}
                         words_translation={words_translation}
                     />}/>
+                    <Route path={"Transcription"}
+                           element={<Transcription transcriptionWord={TranscriptionState[0]}
+                                                   variants={TranscriptionState[0].variants}
+                                                   correctVariant={TranscriptionState[0].correctVariant}
+                                                   transcriptionState={TranscriptionState}
+                                                   setTranscriptionsState={setTranscriptionsState}
+                           />}/>
                 </Routes>
             </div>
+            <img src="https://umka.aisgorod.ru/Content/NewDesign/img/umka-bg.svg" className={"small_bear"} alt=""/>
         </section>
     );
 };

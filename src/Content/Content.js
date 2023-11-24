@@ -41,11 +41,11 @@ const Content = (props) => {
                     <div className={classes.trainer_block}>
                         <Link to={"/Home/WordsSetting"} className={classes.trainer_cards}
                               id={classes["mental"]}>
-                            <img src="../../../img/Translation-Icon-PNG-File.png" className={classes.image_icon}/>
-                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Слова</span>
+                            <img src="../../../img/icons/icon_words_1.png" className={classes.image_icon}/>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Веселые слова</span>
                         </Link>
                         <Link className={classes.trainer_cards} to="/Home/CardsSetting" id={classes["flcard"]}>
-                            <img src="https://cdn4.iconfinder.com/data/icons/gambling-line-icons-vol-1/48/25-1024.png" className={classes.image_icon}/>
+                            <img src="../../../img/icons/icon_puzzle.png" className={classes.image_icon}/>
                             <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Меморио</span>
                         </Link>
                         <Link className={classes.trainer_cards} to="/Home/Sentence" id={classes["shulte"]}>
@@ -53,8 +53,12 @@ const Content = (props) => {
                             <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Предложения - пазлы</span>
                         </Link>
                         <Link className={classes.trainer_cards} to="/Home/NamePicture" id={classes["abacus"]}>
-                            <img src="https://www.clipartmax.com/png/full/295-2958147_strides-exercise-icon.png" className={classes.image_icon}/>
+                            <img src="../../../img/icons/icon_loop.png" className={classes.image_icon}/>
                             <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Опиши действие</span>
+                        </Link>
+                        <Link className={classes.trainer_cards} to="/Home/Transcription" id={classes["jumping"]}>
+                            <img src="../../../img/icons/icon_transcription.png" className={classes.image_icon}/>
+                            <span style={{marginLeft: "15px"}} className={classes.trainer_text}>Транскрипции</span>
                         </Link>
                         {/*<a className={classes.trainer_cards} href="/Home/JumpingNumbers" id={classes["jumping"]}>*/}
                         {/*    <img src="/Content/NewDesign/img/jumping.svg"/>*/}

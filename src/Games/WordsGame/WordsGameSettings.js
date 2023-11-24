@@ -29,11 +29,10 @@ const WordsGameSettings = (props) => {
                             <RadioButton Click={() => onChangeLanguage("English")} text={"Английский"} id={"1"} />
                             <RadioButton Click={() => onChangeLanguage("Russian")} text={"Русский"} id={"2"} />
                         </div>
-
                         <div className={classes.but_block}>
                             <NavLink to={"/Home/words"}
-                                     id="PreStartGame" c
-                                     lassName={classes.orange_button}
+                                     id="PreStartGame"
+                                     className={classes.orange_button}
                                      style={{"marginTop": 0, "outline": "none", "boxShadow": "none"}}
                                      hidden={true}>
                                 <img className={classes.orange_but_bg}

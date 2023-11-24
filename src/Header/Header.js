@@ -35,10 +35,10 @@ const Header = (props) => {
                         <img src="https://umka.aisgorod.ru/Content/NewDesign/img/logo.svg" alt="Логотип МегаУмка"/>
                     </a>
                 </div>
-                <div className={classes.user_label}>
+                <Link to={"/Profile/"} className={classes.user_label}>
                     <img src="https://umka.aisgorod.ru/Content/NewDesign/img/user-face.svg" alt="Пользователь"/>
                     <span className={classes.user_name}>IDK </span>
-                </div>
+                </Link>
             </div>
         </div>
     );

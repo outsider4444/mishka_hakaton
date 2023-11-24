@@ -1,0 +1,90 @@
+.white_block {
+    display: flex;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 1850px;
+    height: 750px;
+    margin: auto;
+}
+.block_bg_wh {
+    z-index: 0;
+    object-fit: fill;
+    position: absolute;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.mental_block_content {
+    display: flex;
+    text-align: center;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    min-width: 840px;
+    min-height: 540px;
+    padding: 50px;
+}
+.orange_button_left {
+    float: left;
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    cursor: pointer;
+    min-width: 50px;
+    min-height: 25px;
+    margin-left: 20px;
+}
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    cursor: pointer;
+    min-width: 50px;
+    min-height: 25px;
+    float: left;
+}
+.orange_button_right {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    cursor: pointer;
+    min-width: 50px;
+    min-height: 25px;
+    margin-left: 1500px;
+}
+
+.orange_button_test {
+    float: left;
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    cursor: pointer;
+    min-width: 50px;
+    min-height: 25px;
+}
+.orange_button:focus .orange_but_bg {
+    filter: drop-shadow(0 15px 15px #ED5E3D60);
+}
+.orange_button:active .orange_but_bg {
+    filter: none;
+}
+.orange_but_bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 15px 15px #ED5E3D40);
+}
+.button_text {
+    font-size: 18px;
+    font-family: MU;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+}

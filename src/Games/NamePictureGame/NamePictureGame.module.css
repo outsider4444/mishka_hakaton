@@ -14,7 +14,9 @@
     align-items: center;
     min-width: 840px;
     min-height: 540px;
-    padding: 50px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .dark_label {
     color: #003348;

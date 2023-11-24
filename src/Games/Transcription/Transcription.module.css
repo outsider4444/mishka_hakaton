@@ -1,0 +1,111 @@
+.white_block {
+    display: flex;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 950px;
+    margin: auto;
+}
+.mental_block_content {
+    display: flex;
+    text-align: center;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    min-width: 840px;
+    min-height: 540px;
+    padding: 50px;
+}
+.dark_label {
+    color: #003348;
+    font-family: MU;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.block_bg_wh {
+    object-fit: fill;
+    position: absolute;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+
+.radioBtnAnswer{
+    width: 40px;
+    height: 40px;
+    border: 5px solid grey;
+}
+.radio_block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    margin-bottom: 7px;
+    align-items: flex-start;
+}
+
+
+.but_block {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.orange_but_bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 15px 15px #ED5E3D40);
+}
+.button_text {
+    font-size: 18px;
+    font-family: MU;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+}
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+}
+.orange_button:focus .orange_but_bg {
+    filter: drop-shadow(0 15px 15px #ED5E3D60);
+}
+.orange_button:active .orange_but_bg {
+    filter: none;
+}
+.input_game{
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    font-size: 24pt;
+    font-family: MU;
+    text-align: center;
+}
+.uncorrect_message{
+    margin-top: 55px;
+    color: red;
+}
+.inp_inp {
+    font-family: MU;
+    font-size: 28px;
+    color: #003348;
+    background: none;
+    padding: 10px 16px;
+    display: block;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 0px 0px 2px #98C0E5 inset;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.question_label{
+    font-size: 32pt;
+}

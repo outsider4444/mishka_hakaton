@@ -21,7 +21,6 @@
 }
 .dark_label {
     color: #003348;
-    font-family: MU;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -40,15 +39,19 @@
 }
 .inp_label {
     color: #F6BB3C;
-    font-family: MU;
     text-align: center;
     font-size: 20px;
 }
 
-.but_block {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
+.orange_button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
 }
 .orange_but_bg {
     object-fit: fill;
@@ -59,22 +62,17 @@
     top: 0;
     filter: drop-shadow(0 15px 15px #ED5E3D40);
 }
+
+.but_block {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
 .button_text {
     font-size: 18px;
-    font-family: MU;
     color: #ffffff;
     position: relative;
     margin: auto;
-}
-.orange_button {
-    position: relative;
-    background-color: transparent;
-    font-family: MU;
-    border: none;
-    margin-top: 30px;
-    cursor: pointer;
-    min-width: 150px;
-    min-height: 50px;
 }
 .orange_button:focus .orange_but_bg {
     filter: drop-shadow(0 15px 15px #ED5E3D60);
@@ -87,7 +85,6 @@
     width: 300px;
     height: 50px;
     font-size: 24pt;
-    font-family: MU;
     text-align: center;
 }
 .uncorrect_message{
@@ -95,7 +92,6 @@
     color: red;
 }
 .inp_inp {
-    font-family: MU;
     font-size: 28px;
     color: #003348;
     background: none;
