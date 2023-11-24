@@ -21,7 +21,7 @@
     left: calc(50% - 405px);
     background-color: rgb(255, 255, 255);
     cursor: default;
-    padding: 40px 20px;
+    padding: 0 20px 20px;
 }
 .modalClose {
     position: absolute;
@@ -42,7 +42,6 @@
     background-color: transparent;
     font-family: MU;
     border: none;
-    margin-top: 1030px;
     cursor: pointer;
     min-width: 150px;
     min-height: 50px;
@@ -68,4 +67,47 @@
 }
 .orange_button:active .orange_but_bg {
     filter: none;
+}
+.correct_title{
+    color: green;
+    text-align: center;
+    font-size: 64px;
+}
+.uncorrect_title{
+    color: #ED5E3D;
+    font-family: MU;
+    text-align: center;
+    font-size: 64px;
+}
+.modal_answer{
+    float: left;
+}
+.modal_answer_title{
+    color: #F6BB3C;
+    font-family: MU;
+    text-align: center;
+    font-size: 20px;
+}
+.modal_answer_label{
+    color: #3A9C74;
+    font-family: MU;
+    text-align: center;
+    font-size: 64px;
+}
+.modal_answer_label_uncorrect{
+    font-family: MU;
+    text-align: center;
+    font-size: 64px;
+}
+/**/
+.orange_button_link {
+    position: relative;
+    background-color: transparent;
+    font-family: MU;
+    border: none;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+    margin-top: 150px;
 }

@@ -20,6 +20,13 @@ body, html {
   background-attachment: fixed; /*edit*/
   -webkit-text-size-adjust: 100%;
 }
+input{
+  font-family: MU;
+}
 a{
   text-decoration: none;
+  font-family: MU;
+}
+button{
+  font-family: MU;
 }

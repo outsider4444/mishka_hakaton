@@ -17,7 +17,7 @@ const WordsGameSettings = (props) => {
 
     return (
         <div>
-            <HeaderGameSettings text={"Слова"} display={"none"}/>
+            <HeaderGameSettings text={"Слова"} watch={false} display={"none"}/>
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
                  style={{"outline": "none", "boxShadow": "none"}}>
                 <div className={classes.white_block}>

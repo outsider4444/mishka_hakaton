@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import HeaderGameSettings from "../HeaderGameSettings/HeaderGameSettings";
 import classes from "./NamePictureGame.module.css";
 import RadioButton from "../../Templates/RadioButton/RadioButton";
+import ModalWindow from "../../Templates/ModalWindow/ModalWindow";
 
 const NamePictureGame = (props) => {
     const [selectedOption, setSelectedOption] = useState("");
     const [isCorrect, setIsCorrect] = useState(null);
+    const [score, setScore] = useState(0);
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
@@ -21,9 +23,9 @@ const NamePictureGame = (props) => {
 
     return (
         <div>
-            <HeaderGameSettings text={"Слова"} display={"none"}/>
+            <HeaderGameSettings watch={true} text={"Слова"} score={score} display={"flex"}/>
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
-                 style={{"outline": "none", "boxShadow": "none"}}>
+                 style={{"outline": "none", "boxShadow": "none", marginTop: -25}}>
                 <div className={classes.white_block}>
                     <img className={classes.block_bg_wh}
                          src="https://umka.aisgorod.ru/Content/NewDesign/img/bg-wh-rec.svg"/>
@@ -44,11 +46,14 @@ const NamePictureGame = (props) => {
                             <span className={classes.button_text}
                                   style={{"fontSize": "18pt", "padding": "10px"}}>Проверить</span>
                         </button>
-                        {isCorrect === true && <p>Правильный ответ!</p>}
-                        {isCorrect === false && <p>Неправильный ответ!</p>}
                     </div>
                 </div>
             </div>
+            <ModalWindow correctWord={selectedOption === props.variants[props.correctVariant].text}
+                         user_word_hint={selectedOption}
+                         // correct_word_hint={correct_label}
+                         score={score}/>
+            {/*    massive_len={currentWord.length}*/}
         </div>
     );
 };

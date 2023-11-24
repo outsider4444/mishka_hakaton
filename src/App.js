@@ -10,6 +10,8 @@ import LectureWrapper from "./Lectures/LectureWrapper";
 import Profile from "./Profile/Profile";
 
 function App() {
+    const [duration, setDuration] = useState(0);
+
     return (
         <div className="App">
             <div className={"bg-wrapper"}>
@@ -17,7 +19,7 @@ function App() {
                     <Routes>
                         <Route path={"/"} element={<Content/>}/>
                         <Route path={"/Lectures/*"} element={<LectureWrapper/>}/>
-                        <Route path={"/Home/*"} element={<Home/>}/>
+                        <Route path={"/Home/*"} element={<Home />}/>
                         <Route path={"/Profile/*"} element={<Profile/>}/>
                     </Routes>
                     <footer></footer>

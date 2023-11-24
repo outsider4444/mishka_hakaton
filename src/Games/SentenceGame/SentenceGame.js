@@ -69,7 +69,7 @@ const SentenceGame = (props) => {
 
     return (
         <div>
-            <HeaderGameSettings score={score} display={"flex"}/>
+            <HeaderGameSettings watch={true} score={score} display={"flex"}/>
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
                  style={{"outline": "none", "boxShadow": "none", marginTop: -50}}>
                 <div className={classes.white_block}>

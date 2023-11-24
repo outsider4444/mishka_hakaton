@@ -6,6 +6,9 @@
     max-width: 950px;
     margin: auto;
 }
+.title_word{
+    font-size: 36pt;
+}
 .mental_block_content {
     display: flex;
     text-align: center;

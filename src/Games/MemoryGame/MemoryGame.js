@@ -53,7 +53,7 @@ const MemoryGame = (props) => {
 
     return (
         <div style={{marginBottom: 30}}>
-            <HeaderGameSettings display={"none"}/>
+            <HeaderGameSettings watch={true} example_visible={"none"} display={"flex"}/>
             <div style={{
                 width: "100%",
                 justifyContent: "center",

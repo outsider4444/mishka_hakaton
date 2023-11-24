@@ -17,50 +17,62 @@ const WordsGame = (props) => {
         {question: "Город", answer: "City"},
         {question: "Стул", answer: "Chair"},
         {question: "Дом", answer: "House"}];
-
-    const [currentWord, setCurrentWord] = useState(props.languageType === "English" ? EnglishWords : RussianWords );
+    const [currentWord, setCurrentWord] = useState(props.languageType === "English" ? EnglishWords : RussianWords);
 
     const [score, setScore] = useState(0);
-    const [unCorrectMessage, setUnCorrectMessage] = useState("");
+
+    const [correctWord, setCorrectWord] = useState(null);
+
+    const [inputAnswerValue, setInputAnswerValue] = useState();
+
+    const [correct_label, setCorrectLabel] = useState(null);
 
     function btnCheckAnswer() {
         let input_answer = document.getElementById("input_answer");
-        if (currentWord.length >= 2){
+        const modalBackground = document.getElementById("modalBackground");
+        setInputAnswerValue(input_answer.value);
+        setCorrectLabel(currentWord[0].answer);
+
+        if (currentWord.length >= 2) {
             if (input_answer.value.toUpperCase() === currentWord[0].answer.toUpperCase()) {
                 setScore(score + 1);
-                setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()))
-                input_answer.value = "";
-                setUnCorrectMessage("")
-                input_answer.focus();
+                setCorrectWord(true);
+                setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()));
+            } else {
+                setCorrectWord(false);
+                play();
+                setCurrentWord(currentWord.filter(word => word.question !== currentWord[0].question));
             }
-            else{
-                setUnCorrectMessage("НЕПРАВИЛЬНО!")
-            }
+            input_answer.value = "";
+            modalBackground.style.display = "block";
         }
-        else if (currentWord.length >= 0){
+        if (currentWord.length === 1) {
             if (input_answer.value.toUpperCase() === currentWord[0].answer.toUpperCase()) {
                 setScore(score + 1);
-                setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()))
-                input_answer.value = "";
-                const modalBackground = document.getElementById("modalBackground");
-                modalBackground.style.display = "block";
+                setCorrectWord(true);
+            } else {
+                setCorrectWord(false);
+                play();
             }
-            else{
-                setUnCorrectMessage("НЕПРАВИЛЬНО!")
-            }
+            input_answer.value = "";
+            modalBackground.style.display = "block";
         }
     }
-
+    function play() {
+        let audio = document.getElementById("audio");
+        audio.play();
+    }
     return (
         <div>
-            <HeaderGameSettings text={"Слова"} score={score} display={"flex"}/>
+            <HeaderGameSettings hidden_watch={"none"} watch={true} text={"Слова"} score={score} display={"flex"}/>
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
                  style={{"outline": "none", "boxShadow": "none", marginTop: -50}}>
                 <div className={classes.white_block}>
                     <img className={classes.block_bg_wh}
                          src="https://umka.aisgorod.ru/Content/NewDesign/img/bg-wh-rec.svg"/>
                     <div className={classes.mental_block_content}>
-                        <div className={classes.question_label}>{currentWord.length > 0 ? currentWord[0].question : ""}</div>
+                        <div
+                            className={classes.question_label}>{currentWord.length > 0 ? currentWord[0].question : ""}</div>
                         <input type="text" id={"input_answer"} className={classes.inp_inp} autoComplete="off"/>
                         <button id="btn_check_answer" className={classes.orange_button} onClick={btnCheckAnswer}
                                 style={{"marginTop": 0, "outline": "none", "boxShadow": "none"}}>
@@ -72,7 +84,11 @@ const WordsGame = (props) => {
                     </div>
                 </div>
             </div>
-            <ModalWindow score={score}/>
+            <audio id="audio" src="../../../sound/1_4z1fBqw.mp3"></audio>
+            <ModalWindow correctWord={correctWord}
+                         user_word_hint={inputAnswerValue} correct_word_hint={correct_label}
+                         massive_len={currentWord.length} score={score}
+            />
         </div>
     );
 };

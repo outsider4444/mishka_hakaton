@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./HeaderGameSettings.module.css";
+import StopWatch from "./StopWatch";
 
 const HeaderGameSettings = (props) => {
     function BackButton_Click(){
@@ -14,13 +15,13 @@ const HeaderGameSettings = (props) => {
                         <button className={classes.but_back} onClick={BackButton_Click}> &lt; Назад</button>
                     </div>
                 </div>
-                <div id="TimerAndCounterBlock" style={{display:props.display}}>
+                <div id="TimerAndCounterBlock" style={{marginRight: props.example_visible==="none" ? 150 : 0}}>
                     <div className={classes.status_bar} id="timerstatus">
-                        <div className={classes.timer_block} style={{display: "none"}}>
-                            <span className={classes.small_wh_text}>время</span>
-                            <span id="TimerHeaderBlock" className={classes.big_wh_text}>00:00</span>
+                        <div className={classes.timer_block}>
+                            <span className={classes.small_wh_text} hidden={!props.watch}>время</span>
+                            <span id="TimerHeaderBlock" className={classes.big_wh_text}><StopWatch watch={!props.watch} /></span>
                         </div>
-                        <div className={classes.scores_block}>
+                        <div className={classes.scores_block} style={{display: props.example_visible === "none" ? "none" : "flex"}}>
                             <span className={classes.small_wh_text}>Примеров решено</span>
                             <span id="CounterExampleBlock" className={classes.big_wh_text}>{props.score}</span>
                         </div>

@@ -180,20 +180,17 @@ const Home = (props) => {
                     <Route path={"WordsSetting/"} element={<WordsGameSettings languageType={languageType}
                                                                               setLanguageType={setLanguageType}/>}/>
                     <Route path={"Words"} element={<WordsGame languageType={languageType}/>}/>
-
                     <Route path={"CardsSetting/"}
                            element={<MemoryGameSettings setCardsItems={setCardsItems} modeCardsType={modeCardsType}
                                                         setModeCardsType={setModeCardsType}/>}/>
                     <Route path={"Cards"}
                            element={<MemoryGame items={cardsItems} setItems={setCardsItems}
                                                 modeCardsType={modeCardsType}/>}/>
-
                     {/*todo Дописать варианты для картинок (создать массивы)*/}
                     <Route path={"NamePicture"}
                            element={<NamePictureGame picture={namePicturesState[0].picture}
                                                      variants={namePicturesState[0].variants}
                                                      correctVariant={namePicturesState[0].correctVariant}/>}/>
-
                     <Route path={"Sentence"} element={<SentenceGame
                         words={words[words_translation].array.sort(() => Math.random() - 0.5)}
                         translationWord={translation[words_translation].array}
