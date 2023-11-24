@@ -13,6 +13,8 @@ const SentenceGame = (props) => {
     const [unCorrectMessage, setUnCorrectMessage] = useState("");
     const [score, setScore] = useState(0);
 
+    const [correct_label, setCorrectLabel] = useState(null);
+
     const handleDrop = (e) => {
         e.preventDefault();
         const droppedWord = e.dataTransfer.getData("text/plain");

@@ -17,7 +17,6 @@ const Transcription = (props) => {
     };
     const checkAnswer = () => {
         const modalBackground = document.getElementById("modalBackground");
-
         setCorrectLabel(props.variants[props.correctVariant].text);
 
         if (props.transcriptionState.length >= 2){
@@ -70,8 +69,8 @@ const Transcription = (props) => {
                     <ModalWindow correctWord={selectedOption === props.variants[props.correctVariant].text}
                                  user_word_hint={selectedOption}
                                  correct_word_hint={correct_label}
+                                 massive_len={props.transcriptionState.length}
                                  score={score}/>
-                {/*    massive_len={currentWord.length}*/}
                 </div>
             </div>
         </div>

@@ -8,16 +8,42 @@ const NamePictureGame = (props) => {
     const [selectedOption, setSelectedOption] = useState("");
     const [isCorrect, setIsCorrect] = useState(null);
     const [score, setScore] = useState(0);
+    const [correct_label, setCorrectLabel] = useState(null);
+    const [correctWord, setCorrectWord] = useState(null);
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
 
     const checkAnswer = () => {
+        setCorrectLabel(props.variants[props.correctVariant].text);
+        const modalBackground = document.getElementById("modalBackground");
+
         if (selectedOption === props.variants[props.correctVariant].text) {
-            setIsCorrect(true);
+            setScore(score + 1);
+            setCorrectWord(true);
         } else {
             setIsCorrect(false);
+        }
+        if (props.namePicturesState.length >= 2){
+            if (selectedOption === props.variants[props.correctVariant].text) {
+                setScore(score + 1);
+                setIsCorrect(true);
+                props.setNamePicturesState(props.namePicturesState.filter(transcription => props.namePicturesState[0].id !== transcription.id))
+            } else {
+                setIsCorrect(false);
+                props.setNamePicturesState(props.namePicturesState.filter(transcription => props.namePicturesState[0].id !== transcription.id))
+            }
+            modalBackground.style.display = "block";
+        }
+        if (props.namePicturesState.length  === 1){
+            if (selectedOption === props.variants[props.correctVariant].text) {
+                setIsCorrect(true);
+                setScore(score + 1);
+            } else {
+                setIsCorrect(false);
+            }
+            modalBackground.style.display = "block";
         }
     };
 
@@ -51,9 +77,9 @@ const NamePictureGame = (props) => {
             </div>
             <ModalWindow correctWord={selectedOption === props.variants[props.correctVariant].text}
                          user_word_hint={selectedOption}
-                         // correct_word_hint={correct_label}
+                         correct_word_hint={correct_label}
+                         massive_len={props.namePicturesState.length}
                          score={score}/>
-            {/*    massive_len={currentWord.length}*/}
         </div>
     );
 };

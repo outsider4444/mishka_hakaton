@@ -147,12 +147,13 @@ const Home = (props) => {
             correctVariant: 1
         },
         {
-            id: 2, picture: "", variants: [{id: 1, text: "Бла1"}, {id: 2, text: "Бла2"}, {id: 3, text: "Бла3"}],
-            correctVariant: 1
+            id: 2, picture: "../../../img/name_picture/vector-man-runner-running-in-race.png",
+            variants: [{id: 1, text: "Running"}, {id: 2, text: "Walking"}, {id: 3, text: "Swimming"}],
+            correctVariant: 0
         },
         {
-            id: 3, picture: "", variants: [{id: 1, text: "Бла1"}, {id: 2, text: "Бла2"}, {id: 3, text: "Бла3"}],
-            correctVariant: 2
+            id: 3, picture: "../../../img/name_picture/book.png", variants: [{id: 1, text: "Book"}, {id: 2, text: "Mouse"}, {id: 3, text: "Cup"}],
+            correctVariant: 0
         },
     ]);
 
@@ -186,11 +187,16 @@ const Home = (props) => {
                     <Route path={"Cards"}
                            element={<MemoryGame items={cardsItems} setItems={setCardsItems}
                                                 modeCardsType={modeCardsType}/>}/>
+
                     {/*todo Дописать варианты для картинок (создать массивы)*/}
                     <Route path={"NamePicture"}
                            element={<NamePictureGame picture={namePicturesState[0].picture}
                                                      variants={namePicturesState[0].variants}
-                                                     correctVariant={namePicturesState[0].correctVariant}/>}/>
+                                                     correctVariant={namePicturesState[0].correctVariant}
+                                                     namePicturesState={namePicturesState}
+                                                     setNamePicturesState={setNamePicturesState}
+                           />}/>
+
                     <Route path={"Sentence"} element={<SentenceGame
                         words={words[words_translation].array.sort(() => Math.random() - 0.5)}
                         translationWord={translation[words_translation].array}
