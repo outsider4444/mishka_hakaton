@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 
 function Controls(prop) {
     const invokeTimer = (
@@ -38,12 +38,11 @@ const Watch = (props) => {
 const StopWatch = (props) => {
     const [active, setActive] = useState(true);
     const [pause, setPause] = useState(false);
-    const [duration, setDuration] = useState(0);
     useEffect(() => {
         let timePeriod = null;
         if (active && pause === false) {
             timePeriod = setInterval(() => {
-                setDuration((duration) => duration + 10);
+                props.setDuration((duration) => duration + 10);
             }, 10);
         } else {
             clearInterval(timePeriod);
@@ -61,11 +60,15 @@ const StopWatch = (props) => {
     };
     const initReset = () => {
         setActive(false);
-        setDuration(0);
+        props.setDuration(0);
     };
+    const initPause = () => {
+        setActive(false);
+        setPause(true);
+    }
     return (
         <div className="stop-watch" hidden={props.watch}>
-            <Watch t={duration} />
+            <Watch t={props.duration} initPause={props.watch}/>
         </div>
     );
 }

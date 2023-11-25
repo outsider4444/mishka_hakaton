@@ -75,7 +75,7 @@ const NamePictureGame = (props) => {
                     </div>
                 </div>
             </div>
-            <ModalWindow correctWord={selectedOption === props.variants[props.correctVariant].text}
+            <ModalWindow correctWord={selectedOption === correct_label}
                          user_word_hint={selectedOption}
                          correct_word_hint={correct_label}
                          massive_len={props.namePicturesState.length}

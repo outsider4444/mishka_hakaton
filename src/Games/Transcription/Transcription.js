@@ -19,7 +19,7 @@ const Transcription = (props) => {
         const modalBackground = document.getElementById("modalBackground");
         setCorrectLabel(props.variants[props.correctVariant].text);
 
-        if (props.transcriptionState.length >= 2){
+        if (props.transcriptionState.length >= 2) {
             if (selectedOption === props.variants[props.correctVariant].text) {
                 setScore(score + 1);
                 setIsCorrect(true);
@@ -30,7 +30,7 @@ const Transcription = (props) => {
             }
             modalBackground.style.display = "block";
         }
-        if (props.transcriptionState.length  === 1){
+        if (props.transcriptionState.length === 1) {
             if (selectedOption === props.variants[props.correctVariant].text) {
                 setIsCorrect(true);
                 setScore(score + 1);
@@ -40,10 +40,10 @@ const Transcription = (props) => {
             modalBackground.style.display = "block";
         }
     };
-
     return (
         <div>
             <HeaderGameSettings watch={true} text={"Слова"} score={score} display={"flex"}/>
+
             <div id="GameSettingsBlock" className="game-block" tabIndex="-1"
                  style={{"outline": "none", "boxShadow": "none", marginTop: -20}}>
                 <div className={classes.white_block}>
@@ -53,10 +53,12 @@ const Transcription = (props) => {
                         <span className={classes.title_word}>{props.transcriptionWord.transcriptionWord}</span>
                         <div className={classes.radio_block}>
                             {props.variants.map(variant =>
-                                <RadioButton key={variant.id} Click={handleOptionChange} text={variant.text} id={variant.id}
+                                <RadioButton key={variant.id} Click={handleOptionChange} text={variant.text}
+                                             id={variant.id}
                                              value={variant.text}/>
                             )}
                         </div>
+
                         <button id="EndGame" onClick={checkAnswer} className={classes.orange_button}
                                 style={{"outline": "none", "boxShadow": "none"}}>
                             <img className={classes.orange_but_bg}
@@ -65,8 +67,9 @@ const Transcription = (props) => {
                             <span className={classes.button_text}
                                   style={{"fontSize": "18pt", "padding": "10px"}}>Проверить</span>
                         </button>
+                        <button href="http://192.168.56.1:3000/Lectures/2">Лекция</button>
                     </div>
-                    <ModalWindow correctWord={selectedOption === props.variants[props.correctVariant].text}
+                    <ModalWindow correctWord={selectedOption === correct_label}
                                  user_word_hint={selectedOption}
                                  correct_word_hint={correct_label}
                                  massive_len={props.transcriptionState.length}

@@ -14,6 +14,7 @@ const SentenceGame = (props) => {
     const [score, setScore] = useState(0);
 
     const [correct_label, setCorrectLabel] = useState(null);
+    const [user_label, setUserLabel] = useState(null);
 
     const handleDrop = (e) => {
         e.preventDefault();
@@ -40,32 +41,34 @@ const SentenceGame = (props) => {
     };
 
     const checkAnswer = () => {
-        // const correctOrder = ["This", "is", "a", "sample", "sentence"]; // Здесь вы можете установить правильный порядок слов
+        setCorrectLabel(props.correctOrder.join(" ")) // Здесь вы можете установить правильный порядок слов
+        setUserLabel(sentence.join(" "));
+        const modalBackground = document.getElementById("modalBackground");
+
         if (props.wordsList.length > 1) {
             if (sentence.join(" ") === props.correctOrder.join(" ")) {
                 setIsCorrect(true);
                 setScore(score + 1);
-                props.setWordsList(props.wordsList.filter((word => word.id !== props.wordsList[props.words_translation].id)))
-                props.setCorrectOrder(props.correctOrderList.filter(word => word.id !== props.correctOrderList[props.words_translation].id))
-                props.setTranslation(props.translationList.filter(word => word.id !== props.translationList[props.words_translation].id))
-                setSentence([]);
-                setUnCorrectMessage(" ")
+                setUnCorrectMessage("")
             } else {
-                setUnCorrectMessage("НЕПРАВИЛЬНО!")
                 setIsCorrect(false);
             }
+            modalBackground.style.display = "block";
+            setUnCorrectMessage(" ")
+            setSentence([]);
+            props.setWordsList(props.wordsList.filter((word => word.id !== props.wordsList[props.words_translation].id)))
+            props.setCorrectOrder(props.correctOrderList.filter(word => word.id !== props.correctOrderList[props.words_translation].id))
+            props.setTranslation(props.translationList.filter(word => word.id !== props.translationList[props.words_translation].id))
         }
         else if (props.wordsList.length === 1){
             if (sentence.join(" ") === props.correctOrder.join(" ")) {
                 setIsCorrect(true);
                 setScore(score + 1);
-                const modalBackground = document.getElementById("modalBackground");
-                modalBackground.style.display = "block";
-                setUnCorrectMessage(" ")
             } else {
-                setUnCorrectMessage("НЕПРАВИЛЬНО!")
                 setIsCorrect(false);
             }
+            modalBackground.style.display = "block";
+            setUnCorrectMessage(" ")
         }
     };
 
@@ -109,8 +112,11 @@ const SentenceGame = (props) => {
                             <span className={classes.button_text}
                                   style={{"fontSize": "18pt", "padding": "10px"}}>Проверить</span>
                         </button>
-                        {unCorrectMessage}
-                        <ModalWindow score={score}/>
+                        <ModalWindow correctWord={user_label === correct_label}
+                                     user_word_hint={user_label}
+                                     correct_word_hint={correct_label}
+                                     massive_len={props.wordsList.length}
+                                     score={score}/>
                     </div>
                 </div>
             </div>

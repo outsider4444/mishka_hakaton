@@ -173,6 +173,9 @@ const Home = (props) => {
         },
     ]);
 
+    // Время
+    const [timeDuration, setTimeDuration] = useState("00:00");
+
     return (
         <section>
             <div className={"content-box"}>
@@ -186,7 +189,10 @@ const Home = (props) => {
                                                         setModeCardsType={setModeCardsType}/>}/>
                     <Route path={"Cards"}
                            element={<MemoryGame items={cardsItems} setItems={setCardsItems}
-                                                modeCardsType={modeCardsType}/>}/>
+                                                modeCardsType={modeCardsType}
+                                                timeDuration={timeDuration}
+                                                setTimeDuration={setTimeDuration}
+                           />}/>
 
                     {/*todo Дописать варианты для картинок (создать массивы)*/}
                     <Route path={"NamePicture"}

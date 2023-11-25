@@ -27,6 +27,8 @@ const WordsGame = (props) => {
 
     const [correct_label, setCorrectLabel] = useState(null);
 
+    const [countTry, setCountTry] = useState(3);
+
     function btnCheckAnswer() {
         let input_answer = document.getElementById("input_answer");
         const modalBackground = document.getElementById("modalBackground");
@@ -39,6 +41,7 @@ const WordsGame = (props) => {
                 setCorrectWord(true);
                 setCurrentWord(currentWord.filter(word => word.answer.toUpperCase() !== input_answer.value.toUpperCase()));
             } else {
+                setCountTry(countTry -1);
                 setCorrectWord(false);
                 play();
                 setCurrentWord(currentWord.filter(word => word.question !== currentWord[0].question));
@@ -51,6 +54,7 @@ const WordsGame = (props) => {
                 setScore(score + 1);
                 setCorrectWord(true);
             } else {
+                setCountTry(countTry -1);
                 setCorrectWord(false);
                 play();
             }
@@ -88,6 +92,7 @@ const WordsGame = (props) => {
             <ModalWindow correctWord={correctWord}
                          user_word_hint={inputAnswerValue} correct_word_hint={correct_label}
                          massive_len={currentWord.length} score={score}
+                         countTry={countTry}
             />
         </div>
     );

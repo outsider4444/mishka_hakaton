@@ -4,6 +4,8 @@ import Card from "./Card";
 import classes from "./MemoryGame.module.css";
 import {NavLink} from "react-router-dom";
 import HeaderGameSettings from "../HeaderGameSettings/HeaderGameSettings";
+import ModalWindow from "../../Templates/ModalWindow/ModalWindow";
+import stopWatch from "../HeaderGameSettings/StopWatch";
 
 const MemoryGame = (props) => {
     const [items, setItems] = useState(props.items);
@@ -12,6 +14,8 @@ const MemoryGame = (props) => {
 
     function check(current) {
         let count_of_correct = 0;
+        const modalBackground = document.getElementById("modalBackground");
+
         if (items[current].id === items[prev].id) {
             if (items[current].sub_id !== items[prev].sub_id) {
                 items[current].stat = "correct"
@@ -23,9 +27,8 @@ const MemoryGame = (props) => {
                     }
                 }
                 if (count_of_correct === items.length) {
-                    let but_block = document.getElementById("nextBtnBlock");
-                    but_block.hidden = false;
-                    but_block.style.display = "grid"
+                    modalBackground.style.display = "block";
+                    console.log()
                 }
             }
         } else {
@@ -53,7 +56,7 @@ const MemoryGame = (props) => {
 
     return (
         <div style={{marginBottom: 30}}>
-            <HeaderGameSettings watch={true} example_visible={"none"} display={"flex"}/>
+            <HeaderGameSettings watch={true} example_visible={"none"} display={"flex"} setTime={props.setTimeDuration}/>
             <div style={{
                 width: "100%",
                 justifyContent: "center",
@@ -67,15 +70,7 @@ const MemoryGame = (props) => {
                     )}
                 </div>
             </div>
-            <div className={classes.but_block} id={"nextBtnBlock"} hidden={true}>
-                <NavLink to={"/"} className={classes.orange_button}
-                         style={{"marginTop": 0, "outline": "none", "boxShadow": "none"}}>
-                    <img className={classes.orange_but_bg}
-                         src="https://umka.aisgorod.ru/Content/NewDesign/img/red-button-bg.svg"
-                         alt="red-but"/>
-                    <span className={classes.button_text}>Далее</span>
-                </NavLink>
-            </div>
+            <ModalWindow correctWord={true} timeDuration={props.timeDuration} />
         </div>
     );
 };
